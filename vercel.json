@@ -1,5 +1,7 @@
 {
   "version": 2,
+  "cleanUrls": true,
+  "trailingSlash": false,
   "builds": [
     {
       "src": "*.html",
@@ -15,7 +17,5 @@
       "src": "/(.*)",
       "dest": "/$1"
     }
-  ],
-  "cleanUrls": true
-
+  ]
 }
