@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Insights | Future Outlook</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .sidebar-link {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .sidebar-link:hover {
+            background-color: rgba(15, 23, 42, 0.05);
+            transform: translateX(4px);
+        }
+        .sidebar-link.active {
+            background-color: rgba(15, 23, 42, 0.08);
+            border-left: 3px solid #0f172a;
+            font-weight: 600;
+        }
+        .sidebar-link.active::before {
+            content: '';
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            background-color: #0f172a;
+            border-radius: 50%;
+        }
+        .sidebar {
+            transition: transform 0.3s ease;
+        }
+        .tooltip {
+            position: absolute;
+            padding: 8px 12px;
+            background-color: rgba(15, 23, 42, 0.95);
+            color: white;
+            border-radius: 6px;
+            font-size: 13px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip.show {
+            opacity: 1;
+        }
+        .legend-item {
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .legend-item.inactive {
+            opacity: 0.3;
+        }
+        .line-path {
+            transition: stroke-width 0.2s, opacity 0.2s;
+        }
+        .line-path.inactive {
+            opacity: 0.2;
+        }
+        .line-path:hover {
+            stroke-width: 4px;
+        }
+        .sidebar-link svg {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Sidebar -->
+    <aside class="fixed left-0 top-0 h-full w-64 bg-white border-r border-gray-200 z-10">
+        <div class="p-6 border-b border-gray-200">
+            <h1 class="text-xl font-semibold text-gray-900">Research Insights</h1>
+            <p class="text-sm text-gray-500 mt-1">Economic Analysis</p>
+        </div>
+        
+         <nav class="p-4">
+            <a href="index.html" class="sidebar-link block px-4 py-3 text-gray-600 rounded-lg mb-1 hover:text-gray-900" data-page="home">
+                <div class="flex items-center justify-between">
+                    <span>Home</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                    </svg>
+                </div>
+            </a>
+            <a href="section1.html" class="sidebar-link block px-4 py-3 text-gray-600 rounded-lg mb-1 hover:text-gray-900" data-page="section1">
+                <div class="flex items-center justify-between">
+                    <span>Market Trends</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path>
+                    </svg>
+                </div>
+            </a>
+            <a href="section2.html" class="sidebar-link block px-4 py-3 text-gray-600 rounded-lg mb-1 hover:text-gray-900" data-page="section2">
+                <div class="flex items-center justify-between">
+                    <span>Portfolio Analysis</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                </div>
+            </a>
+            <a href="section3.html" class="sidebar-link block px-4 py-3 text-gray-600 rounded-lg mb-1 hover:text-gray-900" data-page="section3">
+                <div class="flex items-center justify-between">
+                    <span>Risk Assessment</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                    </svg>
+                </div>
+            </a>
+            <a href="section4.html" class="sidebar-link active block px-4 py-3 text-gray-900 rounded-lg mb-1" data-page="section4">
+                <div class="flex items-center justify-between">
+                    <span>Future Outlook</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                    </svg>
+                </div>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="ml-64 min-h-screen">
+        <!-- Header -->
+        <header class="bg-white border-b border-gray-200 px-12 py-8">
+            <div class="max-w-4xl">
+                <div class="text-sm text-gray-500 mb-3">Section 4 of 4</div>
+                <h2 class="text-4xl font-bold text-gray-900 mb-3">Future Outlook</h2>
+                <p class="text-lg text-gray-600">Projecting market trajectories and identifying emerging opportunities</p>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <article class="px-12 py-12">
+            <div class="max-w-4xl">
+                <!-- Introduction -->
+                <section class="mb-16">
+                    <p class="text-gray-700 text-lg mb-4">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </section>
+
+                <!-- Risk-Return Scatter Visualization -->
+                <section class="mb-16">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Risk-Return Distribution</h3>
+                    <div class="bg-white rounded-lg border border-gray-200 p-8 mb-6">
+                        <div id="outlookChart"></div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                    </p>
+                </section>
+
+                <!-- Future Projections -->
+                <section class="mb-16">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Market Projections</h3>
+                    <p class="text-gray-700 mb-4">
+                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        Consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        Nisi ut aliquid ex ea commodi consequatur. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.
+                    </p>
+                </section>
+
+                <!-- Emerging Opportunities -->
+                <section class="mb-16">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Emerging Opportunities</h3>
+                    <div class="space-y-4 mb-6">
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-900 mb-2">Technology Innovation</h4>
+                            <p class="text-gray-600">
+                                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+                            </p>
+                        </div>
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-900 mb-2">Sustainable Finance</h4>
+                            <p class="text-gray-600">
+                                Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+                            </p>
+                        </div>
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-900 mb-2">Global Diversification</h4>
+                            <p class="text-gray-600">
+                                Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Conclusion -->
+                <section class="mb-16">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Conclusion</h3>
+                    <div class="bg-gray-100 border-l-4 border-gray-900 p-6 rounded mb-6">
+                        <p class="text-gray-700 mb-3">
+                            Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus.
+                        </p>
+                        <p class="text-gray-700">
+                            Ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized.
+                        </p>
+                    </div>
+                    <p class="text-gray-700">
+                        By the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain.
+                    </p>
+                </section>
+
+                <!-- Navigation -->
+                <section class="mt-16 pt-8 border-t border-gray-200">
+                    <div class="flex justify-between items-center">
+                        <a href="section3.html" class="flex items-center gap-2 text-gray-900 font-medium hover:text-gray-600 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                            Previous: Risk Assessment
+                        </a>
+                        <a href="index.html" class="flex items-center gap-2 text-gray-900 font-medium hover:text-gray-600 transition-colors">
+                            Back to Home
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+        // Scatter plot for risk-return analysis
+        const margin = {top: 20, right: 30, bottom: 50, left: 60};
+        const width = 900 - margin.left - margin.right;
+        const height = 450 - margin.top - margin.bottom;
+
+        const svg = d3.select("#outlookChart")
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", `translate(${margin.left},${margin.top})`);
+
+        // Generate sample data points
+        const categories = ['Tech', 'Healthcare', 'Finance', 'Energy', 'Consumer', 'Industrial'];
+        const colors = ['#1e293b', '#334155', '#475569', '#64748b', '#94a3b8', '#cbd5e1'];
+        
+        const data = categories.map((cat, i) => {
+            const baseRisk = 10 + i * 3;
+            const baseReturn = 5 + i * 2.5;
+            return Array.from({length: 8}, () => ({
+                category: cat,
+                risk: baseRisk + (Math.random() - 0.5) * 6,
+                return: baseReturn + (Math.random() - 0.5) * 5,
+                color: colors[i]
+            }));
+        }).flat();
+
+        // Scales
+        const x = d3.scaleLinear()
+            .domain([0, d3.max(data, d => d.risk) * 1.1])
+            .range([0, width]);
+
+        const y = d3.scaleLinear()
+            .domain([0, d3.max(data, d => d.return) * 1.1])
+            .range([height, 0]);
+
+        // Add grid lines
+        svg.append("g")
+            .attr("class", "grid")
+            .attr("opacity", 0.1)
+            .call(d3.axisLeft(y)
+                .tickSize(-width)
+                .tickFormat("")
+            );
+
+        svg.append("g")
+            .attr("class", "grid")
+            .attr("opacity", 0.1)
+            .attr("transform", `translate(0,${height})`)
+            .call(d3.axisBottom(x)
+                .tickSize(-height)
+                .tickFormat("")
+            );
+
+        // Add scatter points
+        svg.selectAll(".dot")
+            .data(data)
+            .enter()
+            .append("circle")
+            .attr("class", "dot")
+            .attr("cx", d => x(d.risk))
+            .attr("cy", d => y(d.return))
+            .attr("r", 6)
+            .attr("fill", d => d.color)
+            .attr("opacity", 0.7)
+            .attr("stroke", "#fff")
+            .attr("stroke-width", 1.5);
+
+        // Add axes
+        svg.append("g")
+            .attr("transform", `translate(0,${height})`)
+            .call(d3.axisBottom(x))
+            .style("color", "#6b7280");
+
+        svg.append("g")
+            .call(d3.axisLeft(y))
+            .style("color", "#6b7280");
+
+        // Add labels
+        svg.append("text")
+            .attr("x", width / 2)
+            .attr("y", height + 40)
+            .attr("text-anchor", "middle")
+            .style("font-size", "12px")
+            .style("fill", "#6b7280")
+            .text("Risk (Volatility %)");
+
+        svg.append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("x", -height / 2)
+            .attr("y", -45)
+            .attr("text-anchor", "middle")
+            .style("font-size", "12px")
+            .style("fill", "#6b7280")
+            .text("Expected Return (%)");
+
+        // Add legend
+        const legend = svg.append("g")
+            .attr("transform", `translate(${width - 120}, 20)`);
+
+        categories.forEach((cat, i) => {
+            const legendRow = legend.append("g")
+                .attr("transform", `translate(0, ${i * 20})`);
+
+            legendRow.append("circle")
+                .attr("r", 5)
+                .attr("fill", colors[i])
+                .attr("opacity", 0.7);
+
+            legendRow.append("text")
+                .attr("x", 12)
+                .attr("y", 4)
+                .style("font-size", "11px")
+                .style("fill", "#6b7280")
+                .text(cat);
+        });
+    </script>
+</body>
+</html>
