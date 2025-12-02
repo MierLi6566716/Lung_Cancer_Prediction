@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Insights | Home</title>
+    <title>Lung Cancer Risk Analysis | Introduction</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -34,9 +34,6 @@
             background-color: #0f172a;
             border-radius: 50%;
         }
-        .sidebar {
-            transition: transform 0.3s ease;
-        }
         .tooltip {
             position: absolute;
             padding: 8px 12px;
@@ -52,73 +49,54 @@
         .tooltip.show {
             opacity: 1;
         }
-        .legend-item {
-            cursor: pointer;
-            transition: opacity 0.2s;
-        }
-        .legend-item.inactive {
-            opacity: 0.3;
-        }
-        .line-path {
-            transition: stroke-width 0.2s, opacity 0.2s;
-        }
-        .line-path.inactive {
-            opacity: 0.2;
-        }
-        .line-path:hover {
-            stroke-width: 4px;
-        }
-        .sidebar-link svg {
-            margin-right: 8px;
-        }
     </style>
 </head>
 <body class="bg-gray-50">
     <!-- Sidebar -->
-    <aside id="sidebar" class="sidebar fixed left-0 top-0 h-full w-64 bg-white border-r border-gray-200 z-10">
+    <aside class="fixed left-0 top-0 h-full w-64 bg-white border-r border-gray-200 z-10">
         <div class="p-6 border-b border-gray-200">
-            <h1 class="text-xl font-semibold text-gray-900">Research Insights</h1>
-            <p class="text-sm text-gray-500 mt-1">Economic Analysis</p>
+            <h1 class="text-xl font-semibold text-gray-900">Lung Cancer Analysis</h1>
+            <p class="text-sm text-gray-500 mt-1">Risk Factor Study</p>
         </div>
         
         <nav class="p-4">
-            <a href="index.html" class="sidebar-link active block px-4 py-3 text-gray-900 rounded-lg mb-1" data-page="home">
+            <a href="index.html" class="sidebar-link active block px-4 py-3 text-gray-900 rounded-lg mb-1">
                 <div class="flex items-center justify-between">
-                    <span>Home</span>
+                    <span>Introduction</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                     </svg>
                 </div>
             </a>
-            <a href="section1.html" class="sidebar-link block px-4 py-3 text-gray-600 rounded-lg mb-1 hover:text-gray-900" data-page="section1">
+            <a href="section1.html" class="sidebar-link block px-4 py-3 text-gray-600 rounded-lg mb-1 hover:text-gray-900">
                 <div class="flex items-center justify-between">
-                    <span>Market Trends</span>
+                    <span>Demographics</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                     </svg>
                 </div>
             </a>
-            <a href="section2.html" class="sidebar-link block px-4 py-3 text-gray-600 rounded-lg mb-1 hover:text-gray-900" data-page="section2">
+            <a href="section2.html" class="sidebar-link block px-4 py-3 text-gray-600 rounded-lg mb-1 hover:text-gray-900">
                 <div class="flex items-center justify-between">
-                    <span>Portfolio Analysis</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                    </svg>
-                </div>
-            </a>
-            <a href="section3.html" class="sidebar-link block px-4 py-3 text-gray-600 rounded-lg mb-1 hover:text-gray-900" data-page="section3">
-                <div class="flex items-center justify-between">
-                    <span>Risk Assessment</span>
+                    <span>Risk Factors</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
                     </svg>
                 </div>
             </a>
-            <a href="section4.html" class="sidebar-link block px-4 py-3 text-gray-600 rounded-lg mb-1 hover:text-gray-900" data-page="section4">
+            <a href="section3.html" class="sidebar-link block px-4 py-3 text-gray-600 rounded-lg mb-1 hover:text-gray-900">
                 <div class="flex items-center justify-between">
-                    <span>Future Outlook</span>
+                    <span>Symptom Analysis</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                </div>
+            </a>
+            <a href="section4.html" class="sidebar-link block px-4 py-3 text-gray-600 rounded-lg mb-1 hover:text-gray-900">
+                <div class="flex items-center justify-between">
+                    <span>Multifactor Analysis</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path>
                     </svg>
                 </div>
             </a>
@@ -126,9 +104,8 @@
 
         <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200">
             <div class="text-xs text-gray-500">
-                <div class="mb-2">Last updated: Nov 2025</div>
-                <div class="flex items-center gap-2">
-                </div>
+                <div class="mb-2">Dataset: 309 individuals</div>
+                <div>Survey-based study</div>
             </div>
         </div>
     </aside>
@@ -136,81 +113,86 @@
     <!-- Main Content -->
     <main class="ml-64 min-h-screen">
         <!-- Header -->
-      <header class="bg-white border-b border-gray-200 px-12 py-8">
-    <div class="max-w-4xl">
-        <h2 class="text-4xl font-bold text-gray-900 mb-3">Understanding Modern Financial Markets</h2>
-        <p class="text-lg text-gray-600">A comprehensive analysis of current economic trends and investment strategies</p>
-        <div class="flex items-center gap-6 mt-6 text-sm text-gray-500">
-            <span>Connor Whitlow & Grace Li</span>
-            <span>•</span>
-            <span>Published: November 2025</span>
-            <span>•</span>
-            <span>5 min read</span>
-        </div>
-    </div>
-    </header>
+        <header class="bg-white border-b border-gray-200 px-12 py-8">
+            <div class="max-w-4xl">
+                <h2 class="text-4xl font-bold text-gray-900 mb-3">Understanding Lung Cancer Risk Patterns</h2>
+                <p class="text-lg text-gray-600">An exploratory analysis of demographic, behavioral, and symptomatic factors associated with lung cancer diagnosis</p>
+                <div class="flex items-center gap-6 mt-6 text-sm text-gray-500">
+                    <span>Connor Whitlow & Mier Li</span>
+                    <span>•</span>
+                    <span>Survey Analysis</span>
+                    <span>•</span>
+                    <span>N = 309 individuals</span>
+                </div>
+            </div>
+        </header>
 
         <!-- Content -->
         <article class="px-12 py-12">
             <div class="max-w-4xl">
                 <!-- Introduction -->
                 <section class="mb-16">
-                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Introduction</h3>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Study Overview</h3>
                     <div class="prose prose-lg text-gray-700 space-y-4">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Lung cancer remains one of the leading causes of cancer-related mortality worldwide. Understanding the interplay between risk factors—from smoking and environmental exposures to symptomatic presentations—is crucial for early detection and prevention strategies.
                         </p>
                         <p>
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+                            This analysis examines survey data from 309 individuals to explore patterns in lung cancer diagnosis across multiple dimensions: demographic characteristics (age, gender), behavioral risk factors (smoking, alcohol consumption), chronic conditions, and a comprehensive symptom profile including respiratory distress, fatigue, and other clinical indicators.
                         </p>
                         <p>
-                            Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                            Our goal is to move beyond simple bivariate comparisons and examine how risk factors combine and interact. By visualizing cumulative symptom burden, age-risk relationships, and multifactor patterns, we aim to build intuition around which combinations of factors most strongly associate with lung cancer presence in this sample.
+                        </p>
+                        <p class="bg-gray-50 p-4 rounded-lg border-l-4 border-gray-900">
+                            <strong>Important Note:</strong> This is a case-control enriched dataset, not a population-representative sample. The prevalence we observe reflects the study design rather than true population rates. Our focus is on <em>comparative patterns</em>—how risk factors differ between those with and without lung cancer—rather than absolute prevalence estimation.
                         </p>
                     </div>
                 </section>
 
-                <!-- Overview Visualization -->
                 <section class="mb-16">
-                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Market Performance Comparison</h3>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Sample Composition: Lung Cancer Prevalence</h3>
                     <div class="bg-white rounded-lg border border-gray-200 p-8 mb-4">
-                        <div id="homeChart"></div>
-                        <div id="chartLegend" class="flex justify-center gap-6 mt-6"></div>
+                        <div id="chart-overall"></div>
                     </div>
+                    <p class="text-gray-600 mb-4">
+                        This chart shows the distribution of lung cancer diagnoses in our sample. The high proportion of cancer cases reflects the case-control study design, where individuals with lung cancer were deliberately oversampled to enable comparative analysis. This composition allows us to examine risk factor patterns with sufficient statistical power in both groups.
+                    </p>
                     <p class="text-gray-600">
-                        Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Hover over the lines to see detailed values, and click legend items to toggle visibility.
+                        While these counts don't represent population prevalence, they establish the foundation for our comparative analyses in subsequent sections, where we'll examine how demographics, behaviors, and symptoms differ between the two groups.
                     </p>
                 </section>
 
-                <!-- Key Findings -->
+                <!-- Key Questions -->
                 <section class="mb-16">
-                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Key Findings</h3>
-                    <div class="grid grid-cols-3 gap-6 mb-8">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Research Questions</h3>
+                    <div class="grid grid-cols-1 gap-4">
                         <div class="bg-white rounded-lg border border-gray-200 p-6">
-                            <div class="text-3xl font-bold text-gray-900 mb-2">24%</div>
-                            <div class="text-sm text-gray-600">Annual Growth Rate</div>
+                            <div class="text-lg font-semibold text-gray-900 mb-2">1. Demographic Patterns</div>
+                            <div class="text-gray-600">How do age and gender distributions differ between individuals with and without lung cancer?</div>
                         </div>
                         <div class="bg-white rounded-lg border border-gray-200 p-6">
-                            <div class="text-3xl font-bold text-gray-900 mb-2">1.8M</div>
-                            <div class="text-sm text-gray-600">Active Participants</div>
+                            <div class="text-lg font-semibold text-gray-900 mb-2">2. Behavioral Risk Factors</div>
+                            <div class="text-gray-600">What is the relative magnitude of risk associated with smoking versus alcohol consumption?</div>
                         </div>
                         <div class="bg-white rounded-lg border border-gray-200 p-6">
-                            <div class="text-3xl font-bold text-gray-900 mb-2">$42B</div>
-                            <div class="text-sm text-gray-600">Total Market Value</div>
+                            <div class="text-lg font-semibold text-gray-900 mb-2">3. Symptom Burden</div>
+                            <div class="text-gray-600">Does cumulative symptom count show a dose-response relationship with lung cancer presence?</div>
+                        </div>
+                        <div class="bg-white rounded-lg border border-gray-200 p-6">
+                            <div class="text-lg font-semibold text-gray-900 mb-2">4. Multifactor Interactions</div>
+                            <div class="text-gray-600">How do age, symptom burden, and smoking status jointly differentiate cancer cases from controls?</div>
                         </div>
                     </div>
-                    <p class="text-gray-700">
-                        Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.
-                    </p>
                 </section>
 
                 <!-- Navigation -->
                 <section class="mt-16 pt-8 border-t border-gray-200">
                     <div class="flex justify-between items-center">
                         <div class="text-gray-400">
-
+                            <!-- Start of analysis -->
                         </div>
                         <a href="section1.html" class="flex items-center gap-2 text-gray-900 font-medium hover:text-gray-600 transition-colors">
-                            Next: Market Trends
+                            Next: Demographics
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                             </svg>
@@ -224,9 +206,93 @@
     <!-- D3.js Library -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
     
-    <!-- Custom JavaScript Modules -->
-    <script src="js/sidebar.js"></script>
-    <script src="js/chart.js"></script>
-    <script src="js/main.js"></script>
+    <script>
+        // Embedded chart data and visualization
+        const sampleData = [
+            {gender: "M", age: 69, smoking: "Yes", yellow_fingers: "No", anxiety: "Yes", peer_pressure: "No", chronic_disease: "Yes", fatigue: "Yes", allergy: "No", wheezing: "Yes", alcohol: "Yes", coughing: "Yes", sob: "Yes", swallowing: "Yes", chest_pain: "Yes", lung_cancer: "YES", symptomCount: 10},
+            {gender: "M", age: 74, smoking: "Yes", yellow_fingers: "Yes", anxiety: "No", peer_pressure: "No", chronic_disease: "Yes", fatigue: "Yes", allergy: "Yes", wheezing: "Yes", alcohol: "Yes", coughing: "Yes", sob: "Yes", swallowing: "Yes", chest_pain: "Yes", lung_cancer: "YES", symptomCount: 11},
+            // Add more sample data representing the full dataset distribution
+            {gender: "F", age: 59, smoking: "No", yellow_fingers: "No", anxiety: "No", peer_pressure: "No", chronic_disease: "No", fatigue: "No", allergy: "No", wheezing: "No", alcohol: "No", coughing: "No", sob: "No", swallowing: "No", chest_pain: "No", lung_cancer: "NO", symptomCount: 0}
+        ];
+
+        // For demo purposes, create synthetic distribution
+        const data = [];
+        for (let i = 0; i < 270; i++) {
+            data.push({lung_cancer: "YES"});
+        }
+        for (let i = 0; i < 39; i++) {
+            data.push({lung_cancer: "NO"});
+        }
+
+        const width = 640;
+        const height = 360;
+        const margin = { top: 30, right: 20, bottom: 60, left: 70 };
+        const innerWidth = width - margin.left - margin.right;
+        const innerHeight = height - margin.top - margin.bottom;
+
+        const svg = d3.select("#chart-overall")
+            .append("svg")
+            .attr("viewBox", `0 0 ${width} ${height}`)
+            .append("g")
+            .attr("transform", `translate(${margin.left},${margin.top})`);
+
+        const tooltip = d3.select("body")
+            .append("div")
+            .attr("class", "tooltip");
+
+        const counts = d3.rollup(data, v => v.length, d => d.lung_cancer);
+        const rows = Array.from(counts, ([status, count]) => ({ status, count }));
+        const totalN = d3.sum(rows, d => d.count);
+        rows.forEach(d => d.pct = d.count / totalN);
+
+        const x = d3.scaleBand()
+            .domain(rows.map(d => d.status))
+            .range([0, innerWidth])
+            .padding(0.4);
+
+        const y = d3.scaleLinear()
+            .domain([0, d3.max(rows, d => d.count)]).nice()
+            .range([innerHeight, 0]);
+
+        svg.selectAll(".bar-prevalence")
+            .data(rows)
+            .enter()
+            .append("rect")
+            .attr("class", "bar-prevalence")
+            .attr("x", d => x(d.status))
+            .attr("y", d => y(d.count))
+            .attr("width", x.bandwidth())
+            .attr("height", d => innerHeight - y(d.count))
+            .attr("fill", "#0f172a")
+            .attr("opacity", 0.85)
+            .on("mousemove", (event, d) => {
+                tooltip
+                    .html(`<strong>${d.status}</strong><br>Count: ${d.count}<br>Share: ${(d.pct * 100).toFixed(1)}%`)
+                    .style("left", (event.pageX + 12) + "px")
+                    .style("top", (event.pageY - 28) + "px")
+                    .classed("show", true);
+            })
+            .on("mouseleave", () => tooltip.classed("show", false));
+
+        svg.append("g")
+            .attr("transform", `translate(0,${innerHeight})`)
+            .call(d3.axisBottom(x));
+
+        svg.append("g")
+            .call(d3.axisLeft(y));
+
+        svg.append("text")
+            .attr("x", innerWidth / 2)
+            .attr("y", innerHeight + 40)
+            .attr("text-anchor", "middle")
+            .text("Lung Cancer Status");
+
+        svg.append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("x", -innerHeight / 2)
+            .attr("y", -50)
+            .attr("text-anchor", "middle")
+            .text("Number of Individuals");
+    </script>
 </body>
 </html>
